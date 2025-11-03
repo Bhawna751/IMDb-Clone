@@ -18,13 +18,14 @@ import java.util.Optional;
 public class MovieController {
 
     @Autowired
-    private MovieService movieService;
+    private MovieService service;
+
     @GetMapping
-    public ResponseEntity<List<Movie>> getAllMovies(){
-        return new ResponseEntity<List<Movie>>(movieService.allMovies(),HttpStatus.OK);
+    public ResponseEntity<List<Movie>> getMovies(){
+        return new ResponseEntity<List<Movie>>(service.findAllMovies(),HttpStatus.OK);
     }
     @GetMapping("/{imdbId}")
     public ResponseEntity<Optional<Movie>> getSingleMovie(@PathVariable String imdbId){
-        return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(imdbId),HttpStatus.OK);
+        return new ResponseEntity<Optional<Movie>>(service.findMovieByImdbId(imdbId),HttpStatus.OK);
     }
 }
