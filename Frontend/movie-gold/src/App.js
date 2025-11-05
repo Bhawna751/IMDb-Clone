@@ -2,7 +2,7 @@ import React from 'react';
 import api  from './api/axiosConfig';
 import './App.css';
 import {useState ,useEffect} from 'react';
-import Layout from './components/Layout';
+import Layout from './components/Layout.js';
 import {Route, Routes} from 'react-router-dom'; 
 import Home from './components/home/Home';
 
@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout/>}>
-          <Route path="/" element={<Home/>}></Route>
+          <Route path="/" element={<Home movies={movies}/>}></Route>
         </Route>
       </Routes>
     </div>
