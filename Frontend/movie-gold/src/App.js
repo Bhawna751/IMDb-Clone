@@ -4,7 +4,6 @@ import './App.css';
 import {useState ,useEffect} from 'react';
 import Layout from './components/Layout.js';
 import {Route, Routes} from 'react-router-dom'; 
-import Home from './components/home/Home';
 
 function App() {
 
